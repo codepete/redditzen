@@ -49,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="LINK\nKARMA"/>
+                android:text="@string/link_karma"/>
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="COMMENT\nKARMA"/>
+                android:text="@string/comment_karma"/>
         </LinearLayout>
 
     </LinearLayout>
