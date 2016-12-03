@@ -10,10 +10,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
@@ -32,6 +34,7 @@ import butterknife.ButterKnife;
 public class MessagesFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
 
     @BindView(R.id.list) ListView listView;
+    @BindView(R.id.empty) TextView emptyView;
     MessagesAdapter adapter;
     SyncUtil syncUtil;
     Parcelable listState;
@@ -54,10 +57,9 @@ public class MessagesFragment extends Fragment implements LoaderManager.LoaderCa
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        MainActivity mainActivity = (MainActivity) context;
-        mainActivity.setToolbarTitle("Messages");
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        getActivity().setTitle("Messages");
     }
 
     @Override
@@ -103,6 +105,7 @@ public class MessagesFragment extends Fragment implements LoaderManager.LoaderCa
         if (adapter == null) {
             adapter = new MessagesAdapter(getActivity(), data);
             listView.setAdapter(adapter);
+            listView.setEmptyView(emptyView);
 
             if (listState != null) {
                 listView.onRestoreInstanceState(listState);

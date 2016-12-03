@@ -88,10 +88,9 @@ public class SubscriptionsFragment extends Fragment implements SubscriptionsCont
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        MainActivity mainActivity = (MainActivity) context;
-        mainActivity.setToolbarTitle("Subscriptions");
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        getActivity().setTitle("Subscriptions");
     }
 
     @Override

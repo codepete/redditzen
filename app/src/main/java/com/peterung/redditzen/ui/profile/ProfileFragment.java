@@ -3,6 +3,7 @@ package com.peterung.redditzen.ui.profile;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -70,10 +71,9 @@ public class ProfileFragment extends Fragment implements ProfileContract.View {
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        MainActivity mainActivity = (MainActivity) context;
-        mainActivity.setToolbarTitle("Profile");
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        getActivity().setTitle("Profile");
     }
 
     @Override
