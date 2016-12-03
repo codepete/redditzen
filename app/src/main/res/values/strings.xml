@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Reddit Zen</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="post_image_description">Image associated with post</string>
+    <string name="load_more"><u>load more</u></string>
+
+
+    <!-- Nav Header -->
+    <string name="login"><u>Login</u></string>
+
+    <string name="content_authority">com.peterung.redditzen.provider.MessagesProvider</string>
+    <string name="sync_account_type">redditzen.peterung.com</string>
+    <string name="banner_ad_unit_id">ca-app-pub-8408361950220436/2908201504</string>
+    <string name="link_karma">LINK\nKARMA</string>
+    <string name="comment_karma">COMMENT\nKARMA</string>
+</resources>
