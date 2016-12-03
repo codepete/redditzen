@@ -46,6 +46,8 @@ public class LoginActivity extends AppCompatActivity {
 
         compositeSubscription = new CompositeSubscription();
 
+        getSupportActionBar().hide();
+
         redditAuth = new Uri.Builder()
                 .scheme("https")
                 .authority("www.reddit.com")
@@ -58,7 +60,6 @@ public class LoginActivity extends AppCompatActivity {
                 .appendQueryParameter("state", "redditzen")
                 .build();
 
-        getSupportActionBar().hide();
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl(redditAuth.toString());
         webView.setWebViewClient(new WebViewClient() {

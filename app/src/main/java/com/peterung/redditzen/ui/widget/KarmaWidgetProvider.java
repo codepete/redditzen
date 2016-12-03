@@ -1,20 +1,14 @@
 package com.peterung.redditzen.ui.widget;
 
 
-import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
-import android.content.Intent;
 import android.widget.RemoteViews;
 
 import com.peterung.redditzen.R;
 import com.peterung.redditzen.RedditZenApplication;
 import com.peterung.redditzen.data.api.RedditService;
-
-import java.text.SimpleDateFormat;
-import java.util.Locale;
-import java.util.Random;
 
 import javax.inject.Inject;
 
