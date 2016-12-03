@@ -45,6 +45,11 @@ public class SubredditPresenter implements SubredditContract.UserActionsListener
                 .subscribe(
                         redditResponse -> {
                             List<Post> posts = RedditObjectConverter.convertToPosts(redditResponse.data.children);
+                            for (Post post: posts) {
+                                if (post.over18) {
+                                    posts.remove(post);
+                                }
+                            }
                             view.showPosts(posts, after != null);
                             after = redditResponse.data.after;
                             Timber.d("Successfully loaded posts");
