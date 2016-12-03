@@ -5,7 +5,6 @@ import android.net.Uri;
 
 import net.simonvt.schematic.annotation.ContentProvider;
 import net.simonvt.schematic.annotation.ContentUri;
-import net.simonvt.schematic.annotation.NotifyBulkInsert;
 import net.simonvt.schematic.annotation.TableEndpoint;
 
 @ContentProvider(authority = MessagesProvider.AUTHORITY,

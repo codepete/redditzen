@@ -12,7 +12,6 @@ import android.os.Bundle;
 import com.peterung.redditzen.RedditZenApplication;
 import com.peterung.redditzen.data.api.RedditService;
 import com.peterung.redditzen.data.api.model.Comment;
-import com.peterung.redditzen.data.api.model.Message;
 import com.peterung.redditzen.data.db.schematic.MessageColumns;
 import com.peterung.redditzen.data.db.schematic.MessagesProvider;
 import com.peterung.redditzen.utils.RedditObjectConverter;

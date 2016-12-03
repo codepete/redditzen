@@ -28,7 +28,6 @@ import com.peterung.redditzen.utils.Strings;
 import org.parceler.Parcels;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import javax.inject.Inject;
 
