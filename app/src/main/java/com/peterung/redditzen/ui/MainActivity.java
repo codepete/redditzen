@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.f2prateek.rx.preferences.Preference;
 import com.google.android.gms.ads.AdRequest;
@@ -101,36 +102,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
 
         Fragment fragment = null;
+
         if (id == R.id.nav_frontpage) {
             fragment = new SubredditFragment();
+        } else if (!accessToken.isSet() || !username.isSet()) {
+            Toast.makeText(this, "Please login to use these features.", Toast.LENGTH_LONG).show();
+            navigationView.setCheckedItem(R.id.nav_frontpage);
+            return false;
         } else if (id == R.id.nav_profile) {
             fragment = new ProfileFragment();
         } else if (id == R.id.nav_messages) {
@@ -139,6 +123,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragment = new SubscriptionsFragment();
         } else if (id == R.id.nav_logout) {
             logout();
+            Toast.makeText(this, "Successfully logged out!", Toast.LENGTH_LONG).show();
+            drawer.closeDrawer(GravityCompat.START);
+            return false;
         }
 
 
@@ -206,15 +193,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         name -> {
-                            if (!Strings.isBlank(name)) {
-                                login.setVisibility(View.GONE);
-                                usernameTv.setVisibility(View.VISIBLE);
-                                usernameTv.setText(name);
-                                Timber.d("Updating nav header with username");
-                            }
+                            login.setVisibility(Strings.isBlank(name) ? View.VISIBLE : View.GONE);
+                            usernameTv.setVisibility(Strings.isBlank(name) ? View.GONE : View.VISIBLE);
+                            usernameTv.setText(name);
+                            Timber.d("Updating nav header");
                         },
                         error -> {
-                            Timber.e("Unable to update nav header with username");
+                            Timber.e("Unable to update nav header");
                         }
                 );
 
@@ -237,6 +222,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void logout() {
-
+        accessToken.set(null);
+        username.set(null);
     }
 }
