@@ -63,8 +63,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setSupportActionBar(toolbar);
         ButterKnife.bind(this);
+
+        setSupportActionBar(toolbar);
         RedditZenApplication.getComponent().inject(this);
         compositeSubscription = new CompositeSubscription();
         toolbar.setTitle("Reddit Zen");
@@ -233,10 +234,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .build();
 
         adView.loadAd(adRequest);
-    }
-
-    public void setToolbarTitle(String title) {
-        toolbar.setTitle(title);
     }
 
     public void logout() {

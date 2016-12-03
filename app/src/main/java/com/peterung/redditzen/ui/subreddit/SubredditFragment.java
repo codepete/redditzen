@@ -89,17 +89,10 @@ public class SubredditFragment extends Fragment implements SubredditContract.Vie
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-
-        if (context instanceof MainActivity) {
-            MainActivity mainActivity = (MainActivity) context;
-            mainActivity.setToolbarTitle("Front Page");
-        } else {
-            getActivity().setTitle(Strings.isBlank(subreddit) ? "Reddit Zen" : subreddit);
-        }
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        getActivity().setTitle(Strings.isBlank(subreddit) ? "Reddit Zen" : subreddit);
     }
-
 
     @Override
     public void onDestroy() {
