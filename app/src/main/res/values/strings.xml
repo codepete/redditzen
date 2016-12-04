@@ -19,4 +19,9 @@
     <string name="link_karma">LINK\nKARMA</string>
     <string name="comment_karma">COMMENT\nKARMA</string>
     <string name="no_messages">NO MESSAGES</string>
+    <string name="front_page">Front Page</string>
+    <string name="profile">Profile</string>
+    <string name="messages">Messages</string>
+    <string name="subscriptions">Subscriptions</string>
+    <string name="logout">Logout</string>
 </resources>
