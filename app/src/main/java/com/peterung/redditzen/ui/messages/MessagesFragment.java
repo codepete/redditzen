@@ -1,7 +1,6 @@
 package com.peterung.redditzen.ui.messages;
 
 
-import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -10,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +21,6 @@ import com.peterung.redditzen.R;
 import com.peterung.redditzen.RedditZenApplication;
 import com.peterung.redditzen.data.db.schematic.MessagesProvider;
 import com.peterung.redditzen.data.sync.SyncUtil;
-import com.peterung.redditzen.ui.MainActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

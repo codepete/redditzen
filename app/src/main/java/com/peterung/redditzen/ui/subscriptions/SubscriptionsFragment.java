@@ -1,7 +1,6 @@
 package com.peterung.redditzen.ui.subscriptions;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -18,7 +17,6 @@ import com.google.android.gms.analytics.Tracker;
 import com.peterung.redditzen.R;
 import com.peterung.redditzen.RedditZenApplication;
 import com.peterung.redditzen.data.api.model.Subreddit;
-import com.peterung.redditzen.ui.MainActivity;
 import com.peterung.redditzen.ui.misc.EndlessScrollListener;
 import com.peterung.redditzen.ui.subreddit.SubredditActivity;
 
