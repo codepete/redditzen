@@ -116,12 +116,13 @@ public class SubredditFragment extends Fragment implements SubredditContract.Vie
 
     @Override
     public void showPosts(List<Post> posts, boolean append) {
+        int count = subredditAdapter.getItemCount();
         if (append) {
             subredditAdapter.addItems(posts);
         } else {
             subredditAdapter.setData(posts);
         }
-        subredditAdapter.notifyDataSetChanged();
+        subredditAdapter.notifyItemRangeInserted(count, posts.size());
 
         if (layoutState != null) {
             linearLayoutManager.onRestoreInstanceState(layoutState);
