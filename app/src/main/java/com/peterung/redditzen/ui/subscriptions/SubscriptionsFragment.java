@@ -116,6 +116,7 @@ public class SubscriptionsFragment extends Fragment implements SubscriptionsCont
 
         if (layoutState != null) {
             linearLayoutManager.onRestoreInstanceState(layoutState);
+            layoutState = null;
         }
     }
 

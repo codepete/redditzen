@@ -124,6 +124,7 @@ public class SubredditFragment extends Fragment implements SubredditContract.Vie
 
         if (layoutState != null) {
             linearLayoutManager.onRestoreInstanceState(layoutState);
+            layoutState = null;
         }
     }
 

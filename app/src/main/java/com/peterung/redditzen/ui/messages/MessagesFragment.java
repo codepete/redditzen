@@ -106,6 +106,7 @@ public class MessagesFragment extends Fragment implements LoaderManager.LoaderCa
 
             if (listState != null) {
                 listView.onRestoreInstanceState(listState);
+                listState = null;
             }
         } else {
             adapter.changeCursor(data);
