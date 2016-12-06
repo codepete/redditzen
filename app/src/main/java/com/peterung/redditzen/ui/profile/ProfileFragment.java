@@ -1,7 +1,6 @@
 package com.peterung.redditzen.ui.profile;
 
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,7 +14,6 @@ import com.google.android.gms.analytics.Tracker;
 import com.peterung.redditzen.R;
 import com.peterung.redditzen.RedditZenApplication;
 import com.peterung.redditzen.data.db.entities.AccountEntity;
-import com.peterung.redditzen.ui.MainActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;

@@ -1,7 +1,6 @@
 package com.peterung.redditzen.ui.subreddit;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -19,7 +18,6 @@ import com.peterung.redditzen.R;
 import com.peterung.redditzen.RedditZenApplication;
 import com.peterung.redditzen.data.api.model.Post;
 import com.peterung.redditzen.data.api.model.Subreddit;
-import com.peterung.redditzen.ui.MainActivity;
 import com.peterung.redditzen.ui.misc.EndlessScrollListener;
 import com.peterung.redditzen.ui.post.PostActivity;
 import com.peterung.redditzen.ui.web.WebActivity;
